@@ -1,0 +1,337 @@
+$backgroundWhite30: rgba(255, 255, 255, .3);
+$backgroundWhite50: rgba(255, 255, 255, .5);
+$backgroundBlack10: rgba(0, 0, 0, .1);
+$backgroundBlack30: rgba(0, 0, 0, .3);
+
+.uni-mask {
+    z-index: -1;
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .5) 100%), radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(0, 0, 0, .3) 166%);
+}
+
+.container {
+    color: $uni-extra-color;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --navigator--height: 66px;
+
+    .scrollTarget {
+        flex: none;
+        background: none;
+        width: 0;
+        height: var(--navigator--height);
+    }
+}
+
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+
+    .background-image {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.navigator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 66px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $uni-mask;
+    backdrop-filter: blur(5px) hue-rotate(90deg);
+
+    :nth-child(n) {
+        border-radius: $uni-radius-root;
+        color: $uni-white;
+        font-size: 1rem;
+        flex: none;
+    }
+
+    .navgator-default {
+        flex: 2 1 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 5rem;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        gap: .5rem;
+
+        :nth-child(n) {
+            padding: 1rem .5rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .5s;
+            position: relative;
+
+            ::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 4px;
+                transform: translateX(-50%);
+                width: 0;
+                border-radius: $uni-radius-root;
+                border: 0px solid $uni-black;
+                opacity: 0;
+                transition: opacity .3s, border .3s, width .5s;
+            }
+        }
+
+
+
+        :hover {
+            background-color: $backgroundBlack10;
+            color: ivory;
+
+            ::before {
+                width: calc(100% - 2rem);
+                border: 2px solid $uni-white;
+                opacity: 1;
+            }
+        }
+    }
+
+    .navgator-left,
+    .navgator-right {
+        cursor: default;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+
+        :nth-child(n) {
+            font-size: 1.25rem;
+        }
+    }
+
+    .navgator-left {
+        padding-left: 2rem;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+        :first-child {
+            --size: 35px;
+            width: var(--size);
+            height: var(--size);
+        }
+
+        :last-child {
+            padding-left: .25rem;
+        }
+    }
+
+    .navgator-right {
+        padding-right: 2rem;
+        cursor: pointer;
+        
+        :nth-child(n) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.swiper-box {
+    position: relative;
+    --height: calc(100vh - var(--navigator--height));
+    height: var(--height);
+    background-color: transparent;
+
+    .swiper-main {
+        height: var(--height);
+    }
+
+    .swiper-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        padding: 45px 0 75px;
+        cursor: default;
+
+        :nth-child(n) {
+            font-weight: bold;
+            line-height: 1.2;
+            text-transform: uppercase;
+            text-shadow: $uni-shadow-sm;
+            color: $uni-white;
+            padding-bottom: 8px;
+        }
+
+        // 不可用，有奇怪的错误
+        // :nth-child(1) {
+        //     font-size: 1.75rem;
+        // }
+        // 采用 .swiper-box--title3-bug-fiex 进行修复
+        .swiper-box--title3-bug-fiex {
+            font-size: 1.75rem;
+        }
+
+        :nth-child(2) {
+            font-size: 2.5rem;
+        }
+
+        :nth-child(3) {
+            font-size: 3.5rem;
+            letter-spacing: 0.5rem;
+        }
+
+        :nth-child(4) {
+            padding: 25px 0 16px;
+            line-height: 1.7;
+        }
+        
+        :nth-child(5) {
+            position: relative;
+            border-radius: 4px;
+            padding: .5rem 1rem;
+            background-image: linear-gradient(to right bottom,$uni-primary,$uni-primary-disable);
+            box-shadow: $uni-shadow-base;
+            
+            ::before {
+                position: absolute;
+                content: '';
+                left: 50%;
+                bottom: 4px;
+                transform: translateX(-50%);
+                width: 0;
+                border-radius: $uni-radius-root;
+                border: 3px solid;
+                opacity: 0;
+                transition: opacity .3s, width .5s,border-color .3s;
+            }
+            
+            :hover {
+                color: $uni-warning;
+                transition: color .3s;
+            }
+        }
+        
+        :hover {
+            ::before {
+                opacity: 1;
+                width: 50%;
+                border-color: $uni-main-color;
+            }
+        }
+    }
+}
+
+.contents-box {
+    min-height: 100vh;
+    
+    .serverStatus-box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        flex: auto;
+        
+        .serverStatus-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 375px;
+            flex: auto;
+            margin: 2rem 0 1rem;
+            
+            .serverStatus-process {
+                width: 100px;
+                height: 100px;
+                position: relative;
+                flex: none;
+            }
+        }
+        
+        // 文字标注
+        .serverStatus-item::before {
+            font-size: 1rem;
+            flex: none;
+        }
+        .serverStatus-item:first-child::before {
+            content: '生存服';
+        }
+        .serverStatus-item:last-child::before {
+            content: '游戏服';
+        }
+        // 图片标注
+        .serverStatus-item::after {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            flex: none;
+            position: absolute;
+            left: 50%;
+        }
+        .serverStatus-item:first-child::after {
+            content: '';
+            background-image: url('@/static/image/负载/u-1.png');
+            width: 88px;
+            height: 72px;
+        }
+        .serverStatus-item:last-child::after {
+            content: '';
+            background-image: url('@/static/image/负载/u-3.png');
+            width: 72px;
+            height: 72px;
+        }
+    }
+}
+
+.contents-item:nth-child(n) {
+    background-color: $uni-bg-color;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .content-title {
+        font-size: 2rem;
+        font-family: "Poppins", sans-serif ,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: bolder;
+        color: $uni-white;
+        
+        :first-child {
+            padding: 0 2rem;
+        }
+    }
+}
+.contents-item:nth-child(odd) {
+    min-height: calc(65vh - var(--navigator--height));
+}
+.contents-item:nth-child(2n) {
+    background-color: $uni-white;
+    min-height: calc(100vh - var(--navigator--height));
+}
+.contents-item:nth-child(1) {
+    background-image: url(https://www.iecraft.com/board/crimson/static/image/hero-bg.jpg);
+}
+.contents-item:nth-child(2) {
+    background-image: url(https://www.iecraft.com/board/crimson/static/image/healthy-bg.jpg);
+    background-position: left;
+}
+.contents-item:nth-child(3) {
+    background-image: url(https://www.iecraft.com/board/crimson/static/image/trainer-bg.jpg);
+}
+.contents-item:nth-child(4) {
+    background-image: url(https://www.iecraft.com/board/crimson/static/image/us-bg.jpg);
+    background-position: left;
+}
