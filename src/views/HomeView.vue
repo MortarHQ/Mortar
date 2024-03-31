@@ -1,6 +1,7 @@
 <template>
   <header>
     <RouterLink to="/about">关于界面</RouterLink>
+    <a href="https://play.mcmod.cn/sv20187835.html" target="_blank">MC MOD 找服玩</a>
   </header>
   <main>
     欢迎加入Motar我的世界服务器，这里有最好玩的冒险与地牢2整合生存！
