@@ -4,9 +4,10 @@
       <IconAvatar :avatar="props.avatar" />
       <div class="name">
         <font>
-          <a :href="props.link" :target="props.link ? '_blank' : '_self'">{{
+          <a v-if="props.link" :href="props.link" target="_blank">{{
             props.name
           }}</a>
+          <a v-else target="_self">{{ props.name }}</a>
         </font>
         <font>{{ props.contribute }}</font>
       </div>
@@ -21,6 +22,7 @@
 </template>
 
 <script setup lang="ts">
+import type { link } from "fs";
 import IconAvatar from "./icons/IconAvatar.vue";
 
 const props = defineProps({
@@ -52,7 +54,7 @@ const props = defineProps({
   link: {
     type: String,
     required: false,
-    default: "#",
+    default: "",
   },
 });
 </script>
