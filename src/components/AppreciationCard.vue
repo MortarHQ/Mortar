@@ -22,7 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import type { link } from "fs";
 import IconAvatar from "./icons/IconAvatar.vue";
 
 const props = defineProps({
