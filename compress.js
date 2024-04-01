@@ -1,25 +1,36 @@
-import { add } from "node-7z";
+import { createWriteStream } from "fs";
+import archiver from "archiver";
 
-// 定义要压缩的目录和压缩后的文件名
+// Define the directory to compress
 const sourceDir = "dist";
-const outputZip = `${sourceDir}/dist.7z`;
+const archiveName = "dist/dist.zip";
 
-console.log(`Compressing ${sourceDir} to ${outputZip}...`);
-
-// 创建 Seven 对象
-const myStream = add(outputZip, sourceDir);
-
-// 监听压缩进度事件
-myStream.on("progress", (progress) => {
-  console.log(`Compression progress: ${progress}%`);
+// Create an output stream to the archive file
+const output = createWriteStream(archiveName);
+const archive = archiver("zip", {
+  zlib: { level: 9 }, // Maximum compression level
 });
 
-// 监听压缩完成事件
-myStream.on("end", () => {
-  console.log("Compression done");
+// Pipe the output stream to the archive file
+archive.pipe(output);
+
+// Add files and subdirectories from the specified directory to the archive
+archive.directory(sourceDir, false);
+
+// Start the compression process
+console.log(`Starting compression of '${sourceDir}' to '${archiveName}'...`);
+
+// Listen for progress events during compression
+archive.on("progress", (progress) => {
+  const percentComplete =
+    (progress.entries.processed / progress.entries.total) * 100;
+  console.log(`Progress: ${percentComplete.toFixed(2)}%`);
 });
 
-// 监听错误事件
-myStream.on("error", (err) => {
-  console.error("Compression error:", err);
-});
+// Finalize the archive
+archive.finalize();
+
+// Print a success message
+console.log(
+  `Files and subdirectories from '${sourceDir}' compressed to '${archiveName}'.`
+);
