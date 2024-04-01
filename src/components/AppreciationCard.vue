@@ -1,5 +1,10 @@
 <template>
-  <div class="appreciationCardContainer">
+  <div
+    class="appreciationCardContainer"
+    :class="{
+      donated: props.isDonated,
+    }"
+  >
     <header>
       <IconAvatar :avatar="props.avatar" />
       <div class="name">
@@ -55,6 +60,11 @@ const props = defineProps({
     required: false,
     default: "",
   },
+  isDonated: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 });
 </script>
 
@@ -71,6 +81,16 @@ const props = defineProps({
   border-radius: var(--Radius-border-radius-round, 20px);
   background: var(--Color-Background-bg-color, #fff);
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+
+  &.donated {
+    box-shadow: 0px 2px 8px 0px #c45656;
+  }
+
+  &:hover {
+    transform: scale(101%) translateY(-4px);
+    box-shadow: 0px 2px 45px 2px #337ecc;
+    z-index: 9999;
+  }
 
   header {
     position: relative;

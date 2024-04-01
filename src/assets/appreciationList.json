@@ -10,37 +10,47 @@
     {
         "name": "WaterOfChaos",
         "contribute": "管理【无偿】",
+        "avatar": "./avatar/WaterOfChaos.jpg",
         "date": "2022-2024"
     },
     {
         "name": "bai_fan_zhou_jing",
         "contribute": "管理【无偿】",
+        "avatar": "./avatar/bai_fan_zhou_jing.jpg",
         "date": "2023-2024"
     },
     {
         "name": "bai_fan_zhou_jing",
         "contribute": "无偿捐助 14.52",
+        "avatar": "./avatar/bai_fan_zhou_jing.jpg",
+        "isDonated": true,
         "date": "2024-03"
     },
     {
         "name": "gayaqi",
         "contribute": "无偿捐助 20",
+        "avatar": "./avatar/gayaqi.jpg",
+        "isDonated": true,
         "date": "2024-03"
     },
     {
         "name": "alaya",
         "contribute": "无偿捐助 10",
+        "avatar": "./avatar/alaya.jpg",
+        "isDonated": true,
         "date": "2024-03-31"
     },
     {
         "name": "FLAME_FORST",
         "contribute": "无偿捐助 20",
+        "isDonated": true,
         "date": "2024-04-01",
-        "avatar": "https://a1.qpic.cn/psc?/V12AZ74i4Ff4sj/bqQfVz5yrrGYSXMvKr.cqc8ijrmIKvSE7CuyTeidOVeYgSWe*Ff26dA4yy5aCtChxEddUK*2geEHyW8Q2vuzdqhZOfWysLcTTApDPaUL564!/c&ek=1&kp=1&pt=0&bo=gAKAAoACgAIBFzA!&tl=3&vuin=954261256&tm=1711933200&dis_t=1711934989&dis_k=ebe9aeb8224fd5e8269a68bf5e07efb2&sce=60-2-2&rf=viewer_4",
+        "avatar": "./avatar/FLAME_FORST.jpg",
         "describe": "地雷不要在我家卡服！"
     },
     {
         "name": "佚名",
+        "isDonated": true,
         "contribute": "无偿捐助 20"
     }
 ]
