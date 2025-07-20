@@ -6,7 +6,7 @@
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
-        <img src="../assets/logo.png" alt="Mortar Logo" class="mortar-logo" />
+        <img src="@/assets/logo.png" alt="Mortar Logo" class="mortar-logo" />
         <div class="hero-text">
           <h1 class="hero-title">Mortar</h1>
           <h2 class="hero-subtitle">我的世界公益服</h2>
