@@ -38,7 +38,6 @@ mortar-website/
 │   ├── App.vue             # 根组件
 │   └── main.ts             # 应用入口
 ├── public/                 # 静态资源
-│   └── logo.jpg           # 服务器 Logo
 ├── dist/                   # 构建输出目录
 └── vite.config.ts          # Vite 配置
 ```

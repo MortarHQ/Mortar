@@ -6,7 +6,7 @@
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
-        <img src="/logo.jpg" alt="Mortar Logo" class="mortar-logo" />
+        <img src="../assets/logo.png" alt="Mortar Logo" class="mortar-logo" />
         <div class="hero-text">
           <h1 class="hero-title">Mortar</h1>
           <h2 class="hero-subtitle">我的世界公益服</h2>
@@ -77,14 +77,22 @@
       <div class="container">
         <h2 class="section-title">当前整合包</h2>
         <div class="modpacks-grid">
-          <div class="modpack-card" v-for="modpack in modpacks" :key="modpack.name">
+          <div
+            class="modpack-card"
+            v-for="modpack in modpacks"
+            :key="modpack.name"
+          >
             <div class="modpack-image">
               <div class="modpack-placeholder">{{ modpack.icon }}</div>
             </div>
             <div class="modpack-info">
               <h3>{{ modpack.name }}</h3>
               <p>{{ modpack.description }}</p>
-              <span class="modpack-status" :class="{ 'is-running': modpack.isRunning }">{{ modpack.isRunning ? '运行中' : '维护中' }}</span>
+              <span
+                class="modpack-status"
+                :class="{ 'is-running': modpack.isRunning }"
+                >{{ modpack.isRunning ? "运行中" : "维护中" }}</span
+              >
             </div>
           </div>
         </div>
@@ -121,47 +129,47 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, nextTick, ref } from 'vue'
-import { heroAnimations, initAllAnimations } from '@/utils/animations'
+import { onMounted, nextTick, ref } from "vue";
+import { heroAnimations, initAllAnimations } from "@/utils/animations";
 
 const modpacks = ref([
   {
-    name: '史前世界',
-    description: 'PrehistoricWorld',
-    icon: '🦕',
-    isRunning: true
+    name: "史前世界",
+    description: "PrehistoricWorld",
+    icon: "🦕",
+    isRunning: true,
   },
   {
-    name: '冒险与地牢2',
-    description: 'RAD2 - 超大型的魔法奇幻冒险生存整合包',
-    icon: '⚔️',
-    isRunning: true
-  }
-])
+    name: "冒险与地牢2",
+    description: "RAD2 - 超大型的魔法奇幻冒险生存整合包",
+    icon: "⚔️",
+    isRunning: true,
+  },
+]);
 
 const joinServer = () => {
-  window.open('https://play.mcmod.cn/sv20187835.html', '_blank')
-}
+  window.open("https://play.mcmod.cn/sv20187835.html", "_blank");
+};
 
 const copyAddress = () => {
-  navigator.clipboard.writeText('bgp.mortar.top')
-  alert('服务器地址已复制到剪贴板')
-}
+  navigator.clipboard.writeText("bgp.mortar.top");
+  alert("服务器地址已复制到剪贴板");
+};
 
 const copyQQ = () => {
-  navigator.clipboard.writeText('483949851')
-  alert('QQ群号已复制到剪贴板')
-}
+  navigator.clipboard.writeText("483949851");
+  alert("QQ群号已复制到剪贴板");
+};
 
 onMounted(async () => {
-  await nextTick()
-  
+  await nextTick();
+
   // Initialize hero animations
-  heroAnimations.init()
-  
+  heroAnimations.init();
+
   // Initialize all other animations
-  initAllAnimations()
-})
+  initAllAnimations();
+});
 </script>
 
 <style scoped>
@@ -176,14 +184,16 @@ onMounted(async () => {
 .hero {
   position: relative;
   height: 100vh;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  left: 0;
+  right: 0;
+  margin: 0;
 }
 
 .hero-background {
@@ -223,6 +233,7 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .hero-title {
@@ -296,6 +307,7 @@ onMounted(async () => {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 2rem;
   max-width: 800px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -462,7 +474,7 @@ onMounted(async () => {
 
 .server-address,
 .qq-group {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-size: 1.1rem;
   font-weight: 600;
   color: #667eea;
@@ -489,23 +501,22 @@ onMounted(async () => {
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.5rem;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
 }
 </style>
-
