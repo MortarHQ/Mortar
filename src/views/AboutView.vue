@@ -19,10 +19,12 @@
             还有更多的游戏攻略和交流。服务器已经运行了一年，期待你的加入！
           </p>
           <p>
-            RAD2 是一个超大型的魔法奇幻冒险生存整合包，你可以在这里体验到完全不同的
-            游戏体验和优质的网络环境，保证你的游戏攻略无与伦比。RAD2 是一个超大型的
-            魔法奇幻冒险生存整合包，与朋友一起完成超过 1500+ 任务，探索超过 100+ 新
-            生物群系，穿越 12+ 不同的维度，挑战超过 10+ 新地牢，收集各种神奇的装备
+            RAD2
+            是一个超大型的魔法奇幻冒险生存整合包，你可以在这里体验到完全不同的
+            游戏体验和优质的网络环境，保证你的游戏攻略无与伦比。RAD2
+            是一个超大型的 魔法奇幻冒险生存整合包，与朋友一起完成超过 1500+
+            任务，探索超过 100+ 新 生物群系，穿越 12+ 不同的维度，挑战超过 10+
+            新地牢，收集各种神奇的装备
             和材料，打造你的专属魔法师，成为这个世界的最强法师！
           </p>
         </div>
@@ -52,11 +54,17 @@
         <h2 class="section-title">致谢名单</h2>
         <p class="contributors-intro">感谢以下朋友对服务器的支持与贡献：</p>
         <div class="contributors-grid">
-          <div class="contributor-card" v-for="contributor in contributors" :key="contributor.name">
+          <div
+            class="contributor-card"
+            v-for="contributor in contributors"
+            :key="contributor.name"
+          >
             <div class="contributor-avatar">{{ contributor.avatar }}</div>
             <h3>{{ contributor.name }}</h3>
             <p>{{ contributor.description }}</p>
-            <span class="contributor-role" :class="contributor.roleClass">{{ contributor.role }}</span>
+            <span class="contributor-role" :class="contributor.roleClass">{{
+              contributor.role
+            }}</span>
           </div>
         </div>
       </div>
@@ -67,11 +75,11 @@
       <div class="container">
         <h2 class="section-title">相关链接</h2>
         <div class="links-grid">
-          <a 
-            v-for="link in externalLinks" 
+          <a
+            v-for="link in externalLinks"
             :key="link.title"
-            :href="link.url" 
-            target="_blank" 
+            :href="link.url"
+            target="_blank"
             class="link-card"
           >
             <div class="link-icon">{{ link.icon }}</div>
@@ -104,119 +112,119 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, nextTick, ref } from 'vue'
-import { pageTransitions, initAllAnimations } from '@/utils/animations'
+import { onMounted, nextTick, ref } from "vue";
+import { pageTransitions, initAllAnimations } from "@/utils/animations";
 
 const serverSpecs = ref([
   {
-    name: '处理器',
-    icon: '🖥️',
-    value: 'R7-7840HS 5.1Ghz'
+    name: "处理器",
+    icon: "🖥️",
+    value: "R7-7840HS 5.1Ghz",
   },
   {
-    name: '内存',
-    icon: '💾',
-    value: '7500Mhz 32GB'
+    name: "内存",
+    icon: "💾",
+    value: "7500Mhz 32GB",
   },
   {
-    name: '存储',
-    icon: '💿',
-    value: '512GB 固态系统盘<br>+ 2T 固态数据盘'
+    name: "存储",
+    icon: "💿",
+    value: "512GB 固态系统盘<br>+ 2T 固态数据盘",
   },
   {
-    name: '网络',
-    icon: '🌐',
-    value: '多线接入'
-  }
-])
+    name: "网络",
+    icon: "🌐",
+    value: "多线接入",
+  },
+]);
 
 const contributors = ref([
   {
-    name: 'Landmine地雷',
-    description: '服务器管理员',
-    avatar: '👤',
-    role: '管理员',
-    roleClass: 'admin'
+    name: "Landmine地雷",
+    description: "服务器管理员",
+    avatar: "👤",
+    role: "管理员",
+    roleClass: "admin",
   },
   {
-    name: 'FLAME_FORST',
-    description: '无偿捐助 20',
-    avatar: '👤',
-    role: '支持者',
-    roleClass: 'supporter'
+    name: "FLAME_FORST",
+    description: "无偿捐助 20",
+    avatar: "👤",
+    role: "支持者",
+    roleClass: "supporter",
   },
   {
-    name: 'WaterOfChaos',
-    description: '管理员 [无偿]',
-    avatar: '👤',
-    role: '管理员',
-    roleClass: 'admin'
+    name: "WaterOfChaos",
+    description: "管理员 [无偿]",
+    avatar: "👤",
+    role: "管理员",
+    roleClass: "admin",
   },
   {
-    name: 'alaya',
-    description: '无偿捐助 10',
-    avatar: '👤',
-    role: '支持者',
-    roleClass: 'supporter'
+    name: "alaya",
+    description: "无偿捐助 10",
+    avatar: "👤",
+    role: "支持者",
+    roleClass: "supporter",
   },
   {
-    name: '佚名',
-    description: '感谢各位的支持与贡献<br>欢迎新玩家加入！',
-    avatar: '👤',
-    role: '支持者',
-    roleClass: 'supporter'
-  }
-])
+    name: "佚名",
+    description: "",
+    avatar: "👤",
+    role: "支持者",
+    roleClass: "supporter",
+  },
+]);
 
 const externalLinks = ref([
   {
-    title: '官方网站',
-    description: '访问 Mortar 官方网站',
-    icon: '🌐',
-    url: 'https://www.mortar.top'
+    title: "官方网站",
+    description: "访问 Mortar 官方网站",
+    icon: "🌐",
+    url: "https://www.mortar.top",
   },
   {
-    title: 'GitHub',
-    description: '查看开源项目',
-    icon: '💻',
-    url: 'https://github.com/MortarHQ'
+    title: "GitHub",
+    description: "查看开源项目",
+    icon: "💻",
+    url: "https://github.com/MortarHQ",
   },
   {
-    title: 'RAD2 教程',
-    description: '学习 RAD2 整合包攻略',
-    icon: '📚',
-    url: 'https://www.mcmod.cn/post/3819.html'
+    title: "RAD2 教程",
+    description: "学习 RAD2 整合包攻略",
+    icon: "📚",
+    url: "https://www.mcmod.cn/post/3819.html",
   },
   {
-    title: 'MC MOD 找服玩',
-    description: '在 MC MOD 上查看服务器',
-    icon: '🎮',
-    url: 'https://play.mcmod.cn/sv20187835.html'
-  }
-])
+    title: "MC MOD 找服玩",
+    description: "在 MC MOD 上查看服务器",
+    icon: "🎮",
+    url: "https://play.mcmod.cn/sv20187835.html",
+  },
+]);
 
 const copyQQ = () => {
-  navigator.clipboard.writeText('483949851')
-  alert('QQ群号已复制到剪贴板')
-}
+  navigator.clipboard.writeText("483949851");
+  alert("QQ群号已复制到剪贴板");
+};
 
 const copyAddress = () => {
-  navigator.clipboard.writeText('bgp.mortar.top')
-  alert('服务器地址已复制到剪贴板')
-}
+  navigator.clipboard.writeText("bgp.mortar.top");
+  alert("服务器地址已复制到剪贴板");
+};
 
 onMounted(async () => {
-  await nextTick()
-  
+  await nextTick();
+
   // Initialize page transition
-  const aboutElement = document.querySelector('.about') as HTMLElement
+  const aboutElement = document.querySelector(".about") as HTMLElement;
   if (aboutElement) {
-    pageTransitions.enter(aboutElement)
+    pageTransitions.enter(aboutElement);
   }
-  
+
   // Initialize all animations
-  initAllAnimations()
-})
+  initAllAnimations();
+});
 </script>
 
 <style scoped>
@@ -473,7 +481,7 @@ onMounted(async () => {
 }
 
 .contact-value {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-size: 1.2rem;
   font-weight: 600;
   color: #667eea;
@@ -502,20 +510,19 @@ onMounted(async () => {
   .page-title {
     font-size: 2rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .specs-grid,
   .contributors-grid,
   .links-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-info {
     grid-template-columns: 1fr;
   }
 }
 </style>
-

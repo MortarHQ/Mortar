@@ -116,7 +116,7 @@
           </div>
           <div class="info-card">
             <h3>游戏版本</h3>
-            <p>Minecraft 1.16.5</p>
+            <p>🟩Minecraft 1.16.5</p>
           </div>
           <div class="info-card">
             <h3>服务器类型</h3>
@@ -134,9 +134,9 @@ import { heroAnimations, initAllAnimations } from "@/utils/animations";
 
 const modpacks = ref([
   {
-    name: "史前世界",
-    description: "PrehistoricWorld",
-    icon: "🦕",
+    name: "脆骨症",
+    description: "No Flesh Without Chest",
+    icon: "🥩",
     isRunning: true,
   },
   {
@@ -144,6 +144,12 @@ const modpacks = ref([
     description: "RAD2 - 超大型的魔法奇幻冒险生存整合包",
     icon: "⚔️",
     isRunning: true,
+  },
+  {
+    name: "史前世界",
+    description: "PrehistoricWorld",
+    icon: "🦕",
+    isRunning: false,
   },
 ]);
 
