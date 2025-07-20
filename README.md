@@ -1,61 +1,145 @@
-# vue-project
+# Mortar 我的世界服务器官网
 
-This template should help get you started developing with Vue 3 in Vite.
+一个现代化、优雅、流畅的 Vue 3.6 + Vite + TypeScript 网站，为 Mortar 我的世界公益服务器打造。
 
-## Recommended IDE Setup
+## 🚀 技术栈
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Vue 3.6** - 渐进式 JavaScript 框架
+- **Vite** - 下一代前端构建工具
+- **TypeScript** - 类型安全的 JavaScript
+- **Vue Router** - 官方路由管理器
+- **Pinia** - 状态管理库
+- **GSAP** - 高性能动画库
 
-## Type Support for `.vue` Imports in TS
+## ✨ 特性
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- 🎨 **现代化设计** - 优雅的视觉设计和用户体验
+- 🎭 **流畅动画** - 使用 GSAP 实现的丰富动画效果
+- 📱 **响应式布局** - 完美适配桌面端和移动端
+- ⚡ **高性能** - Vite 构建，快速加载
+- 🔧 **类型安全** - TypeScript 提供完整的类型检查
+- 🎯 **SEO 友好** - 优化的页面结构和元数据
+- 🖼️ **Logo 展示** - 炮弹主题 Logo 突出服务器特色
+- 📊 **动态渲染** - 使用 JavaScript 数组动态渲染内容
 
-## Customize configuration
+## 📁 项目结构
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```
+mortar-website/
+├── src/
+│   ├── components/          # 可复用组件
+│   ├── views/              # 页面组件
+│   │   ├── HomeView.vue    # 首页
+│   │   └── AboutView.vue   # 关于页面
+│   ├── router/             # 路由配置
+│   ├── stores/             # Pinia 状态管理
+│   ├── utils/              # 工具函数
+│   │   └── animations.ts   # GSAP 动画配置
+│   ├── App.vue             # 根组件
+│   └── main.ts             # 应用入口
+├── public/                 # 静态资源
+│   └── logo.jpg           # 服务器 Logo
+├── dist/                   # 构建输出目录
+└── vite.config.ts          # Vite 配置
+```
 
-## Project Setup
+## 🎯 页面功能
 
-```sh
+### 首页 (/)
+- **Hero 区域** - 炮弹 Logo + 吸引人的标题和介绍
+- **紫色背景** - 覆盖整个首页的渐变背景
+- **服务器特色** - 四大核心特色展示
+- **当前整合包** - 动态渲染的整合包列表
+- **服务器信息** - 地址、QQ群等关键信息
+- **动画效果** - 页面加载和滚动触发的动画
+
+### 关于页面 (/about)
+- **服务器介绍** - 详细的服务器描述
+- **服务器配置** - 动态渲染的硬件配置展示
+- **致谢名单** - 动态渲染的支持者和贡献者列表
+- **相关链接** - 动态渲染的外部链接
+- **联系方式** - QQ群和服务器地址
+
+## 🎨 动画效果
+
+使用 GSAP 实现的丰富动画效果：
+
+- **页面进入动画** - 元素依次淡入和滑动
+- **滚动触发动画** - 滚动到视口时触发的动画
+- **悬停效果** - 按钮和卡片的交互动画
+- **导航动画** - 导航栏和移动端菜单动画
+- **页面切换** - 路由切换时的过渡效果
+
+## 🛠️ 开发指南
+
+### 环境要求
+- Node.js 16+
+- npm 或 yarn
+
+### 安装依赖
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+### 开发服务器
+```bash
 npm run dev
 ```
+访问 http://localhost:5173
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+### 构建生产版本
+```bash
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
+### 类型检查
+```bash
+npm run type-check
 ```
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+## 📱 响应式设计
 
-```sh
-npm run test:e2e:dev
-```
+网站完全响应式，支持：
+- 桌面端 (1200px+)
+- 平板端 (768px - 1199px)
+- 移动端 (< 768px)
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+## 🔗 外部链接
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+- **MC MOD 找服玩** - https://play.mcmod.cn/sv20187835.html
+- **官方网站** - https://www.mortar.top
+- **GitHub** - https://github.com/MortarHQ
+- **RAD2 教程** - https://www.mcmod.cn/post/3819.html
 
-```sh
-npm run build
-npm run test:e2e
-```
+## 📞 联系信息
 
-### Lint with [ESLint](https://eslint.org/)
+- **QQ 交流群**: 483949851
+- **服务器地址**: bgp.mortar.top
+- **游戏版本**: Minecraft 1.16.5
 
-```sh
-npm run lint
-```
+## 🎮 服务器特色
+
+- **完全免费** - 无偿无盈利的公益服务器
+- **稳定运行** - 已稳定运行4年
+- **高性能配置** - R7-7840HS + 32GB内存 + 固态硬盘
+- **丰富内容** - 1500+任务，100+新生物群系，12+维度，10+地牢
+
+## 🔄 最新更新
+
+### v2.0 (2025-07-20)
+- ✅ 添加了Mortar Logo
+- ✅ 首页紫色背景覆盖整个页面
+- ✅ 整合包列表改为动态渲染
+- ✅ 贡献者列表改为动态渲染
+- ✅ 服务器配置改为动态渲染
+- ✅ 外部链接改为动态渲染
+- ✅ 优化了代码结构和可维护性
+
+## 📄 许可证
+
+本项目仅用于 Mortar 我的世界服务器官方网站。
+
+---
+
+**感谢您对 Mortar 公益服的支持与帮助！**
+
